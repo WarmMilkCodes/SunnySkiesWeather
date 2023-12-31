@@ -1,0 +1,93 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Overall body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #eef2f3;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header */
+.header {
+    padding: 30px 0;
+    background: linear-gradient(135deg, #6db3f2, #1c92d2); /* Gradient background */
+    color: white;
+}
+
+h1 {
+    font-size: 2.8em;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Form Styling */
+form {
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"], input[type="submit"] {
+    width: 90%;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+input[type="text"] {
+    border: 2px solid #6db3f2; /* Light blue border */
+}
+
+input[type="submit"] {
+    background-color: #1c92d2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #6db3f2;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Weather Display */
+.weather-section {
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    width: 80%;
+    max-width: 400px;
+    text-align: left;
+}
+
+/* Error Message */
+.error {
+    color: #D32F2F;
+    margin-top: 20px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    form, .weather-section {
+        width: 90%;
+    }
+}

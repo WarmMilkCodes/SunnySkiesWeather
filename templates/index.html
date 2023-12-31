@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Sunny Skies</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Sunny Skies Forecast</h1>
+    </div>
+    <main>
+        <form action="/" method="post">
+            <input type="text" name="zipcode" placeholder="Enter a ZIP code">
+            <input type="submit" value="Get Forecast">
+        </form>
+
+        <!-- Weather Display Area -->
+        {% if weather %}
+            <h2>{{ weather['location']['name'] }}, {{ weather['location']['region'] }}</h2>
+            <p>Temperature: {{ weather['current']['temp_f'] }}°F</p>
+            <p>Condition: {{ weather['current']['condition']['text'] }}</p>
+        {% endif %}
+    </main>
+</body>
+</html>
