@@ -9,18 +9,32 @@
 <body>
     <div class="header">
         <h1>Sunny Skies Forecast</h1>
-    </div>
-    <main>
         <form action="/" method="post">
-            <input type="text" name="zipcode" placeholder="Enter a ZIP code">
+            <input type="text" name="zipcode" placeholder="Enter ZIP code">
             <input type="submit" value="Get Forecast">
         </form>
+    </div>
+    <main>
+        
 
         <!-- Weather Display Area -->
         {% if weather %}
             <h2>{{ weather['location']['name'] }}, {{ weather['location']['region'] }}</h2>
             <p>Temperature: {{ weather['current']['temp_f'] }}°F</p>
             <p>Condition: {{ weather['current']['condition']['text'] }}</p>
+        {% endif %}
+        {% if forecast %}
+            <div class="forecast-section">
+                {% for day in forecast %}
+                <div class="forecast-day">
+                    <h3>{{ day['date'] }}</h3>
+                    <p>{{ day.day.condition.text }}</p>
+                    <p>High: {{ day['day']['maxtemp_f'] }}°F</p>
+                    <p>Low: {{ day['day']['mintemp_f'] }}°F</p>
+                    <img src="{{ day['day']['condition']['icon'] }}" alt="{{ day['day']['condition']['text'] }}">
+                </div>
+                {% endfor %}
+            </div>
         {% endif %}
     </main>
 </body>

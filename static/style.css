@@ -67,13 +67,43 @@ input[type="submit"]:hover {
 .weather-section {
     background-color: white;
     margin: 20px auto;
-    padding: 20px;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     width: 80%;
     max-width: 400px;
     text-align: left;
 }
+
+/* 3 Day Forecast */
+.forecast-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 800px;
+}
+
+.forecast-day {
+    flex-grow: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.forecast-day:last-child {
+    border-bottom: none;
+}
+
+/* Adjustments for small screens */
+@media (max-width: 600px) {
+    .forecast-section {
+        flex-direction: column;  /* Stack items vertically on small screens */
+    }
 
 /* Error Message */
 .error {
@@ -90,4 +120,6 @@ input[type="submit"]:hover {
     form, .weather-section {
         width: 90%;
     }
+
+}
 }
